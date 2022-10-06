@@ -11,82 +11,143 @@ body{
     font-family: Monserrat-Light;
     src: url(./assets/font/Montserrat-Light.ttf);
 }    
-    h1, h3, h4{
-     font-family: "Siracha-regular", sans-serif;
-     color: orangered;
-     text-align: center;
-     padding: 35px;  
-    }
-    h2{
-        color: black;
-        text-align: center;
-    }   
-    h3{
-        font-size: 2.2rem;
-    }
-    #top{
+
+  /*Contenedor principal*/
+.padre{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows:  0.74fr 2.5fr 0.4fr;
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+}
+  
+  /*Cabecera*/
+  .header {
+     grid-area: header;
+     display: flex;
+     justify-content: left;
+     align-items: center;
+     background-color: orange;
+  }
+  
+  .header img{
+    width: 120px;
+    border-radius: 20px;
+    padding: 10px;
+  }
+
+  .header h3{
+    font-family: "Siracha-regular", sans-serif;
+    color: orangered;
+    text-align: left;
+    font-size: 2.1rem;
+  }
+  
+  /*estilos generales Menu*/
+  .header nav a{
+    display: block;
+    color: orange;
+    padding: 10px;
+    text-decoration: none;
+    transition: .4s;
+  }
+
+  .header nav a:hover{
+    background: orange;
+  }
+
+  .header nav ul{
+    list-style: none;
+    padding: 70px;         
+  }
+
+  .header nav li{
+    line-height: 20px;
+    position: relative;
+  }
+
+  .header nav li ul{
+    position: absolute;
+    display: none;
+  }    
+
+  .header nav li:hover > ul{
+    display: block;
+  }
+
+  /*Menu - primer nivel*/
+  .header nav > ul{
+    background: orange;
+    display: table;
+    
+  }
+  
+  .header nav > ul > li{
+    padding: 10px;
+    float: left;
+  }
+
+  /*Menu - segundo nivel*/
+  .header nav li li{
+    background: orange;
+    transition: all .4s;    
+  }
+
+  .header nav > ul > li > ul{
+    top: 40px;
+    padding: 0px;
+  }
+
+  .header nav ul li a{
+    color: orangered;
+    font-style: normal;
+    font-family: "Siracha-regular", sans-serif;
+    font-size: 18px;
+  }
+
+  .header nav ul li a:hover{
+    color: aliceblue;
+    background-color: rgb(255, 123, 0);
+    font-style: normal;
+    padding: 10px;
+  }
+
+  /*Main*/  
+  .main { 
+    grid-area: main;
+    background-color: bisque;
+  }
+  
+  .main h2{
+    color: black;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .main h3{
+    font-family: "Siracha-regular", sans-serif;
+    color: orangered;
+    text-align: center;
+    padding: 35px;  
+    font-size: 2.2rem;
+  }
+
+  .main .imagenMain{
+    text-align: center;
+    padding: 20px;
+
+  }
+
+  /*Footer*/
+  .footer{ 
+    grid-area: footer;
+    background-color: orange;
+  }
+  
+
+#top{
         text-align: left;
         padding: 28px;
-    }
-    .logo{
-        width: 130px;
-    }
-    nav{
-        text-align: center;
-        margin: -50px;
-    }
-    .menu{
-        list-style-type: none;
-        background-color: orange;
-        padding: 0%;    
-        width: 90%;
-        margin: 20px auto;
-    }
-    .footer{
-        list-style-type: none;
-        background-color: orange;
-        padding: 0%;    
-        width: 90%;
-        margin: 20px auto;
-    }    
-    .menu .item{
-        display: inline-block;
-        position: relative;
-        font-size: 1.2rem;
-        text-align: center;
-    }
-    .submenu{
-        position: absolute;
-        display: none;
-    }
-    .menu .submenu .sub_i{
-        display: block;
-        font-size: 0.8px;
-        padding: auto;
-    }
-    .menu .item a{
-        color: black;
-        text-decoration: none;
-        font-weight: bolder;
-        display: inline-block;
-        padding: 20px;
-    }
-    .menu .item a:hover{
-        color: aliceblue;
-    }
-    .menu .item:hover .submenu{
-        display: block;
-        color: aliceblue;
-    }
-    .menu .item:hover a{
-        background-color: orangered;
-        color: aliceblue;
-    }
-    .section2{
-        text-align: center;
-    }
-
-    .Sedes{
-        text-align: right;
-        padding: 51px;
-    }
+}
